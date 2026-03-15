@@ -1,4 +1,4 @@
-{
+﻿{
   "info": {
     "name": "Banca Microservices API",
     "description": "Postman collection for testing ms-cliente (8081) and ms-cuenta (8082)",
@@ -20,7 +20,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"nombre\": \"Juan Perez\",\r\n  \"genero\": \"Masculino\",\r\n  \"identificacion\": \"1758652314\",\r\n  \"direccion\": \"Calle Falsa 123\",\r\n  \"telefono\": \"555-1234\",\r\n  \"contrasena\": \"secreta\",\r\n  \"estado\": \"true\",\r\n  \"edad\": 30\r\n}"
+              "raw": "{\r\n  \"nombre\": \"Juan Perez\",\r\n  \"genero\": \"Masculino\",\r\n  \"identificacion\": \"1758652314\",\r\n  \"direccion\": \"Calle Falsa 123\",\r\n  \"telefono\": \"555-1234\",\r\n  \"contrasena\": \"secreta\",\r\n  \"estado\": true,\r\n  \"edad\": 30\r\n}"
             },
             "url": {
               "raw": "http://localhost:8081/clientes",
@@ -57,7 +57,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"nombre\": \"Juan Perez Modificado\",\r\n  \"identificacion\": \"1758652314\",\r\n  \"genero\": \"Masculino\",\r\n  \"direccion\": \"Av. Siempreviva 742\",\r\n  \"telefono\": \"555-9999\",\r\n  \"contrasena\": \"secreta123\",\r\n  \"estado\": \"true\",\r\n  \"edad\": 35\r\n}"
+              "raw": "{\r\n  \"nombre\": \"Juan Perez Modificado\",\r\n  \"identificacion\": \"1758652314\",\r\n  \"genero\": \"Masculino\",\r\n  \"direccion\": \"Av. Siempreviva 742\",\r\n  \"telefono\": \"555-9999\",\r\n  \"contrasena\": \"secreta123\",\r\n  \"estado\": true,\r\n  \"edad\": 35\r\n}"
             },
             "url": {
               "raw": "http://localhost:8081/clientes/1",
@@ -150,7 +150,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"tipoCuenta\": \"Corriente\",\r\n  \"saldoInicial\": 5000,\r\n  \"estado\": false\r\n}"
+              "raw": "{\r\n  \"numeroCuenta\": \"478758\",\r\n  \"tipoCuenta\": \"Corriente\",\r\n  \"saldoInicial\": 5000,\r\n  \"estado\": false,\r\n  \"clienteId\": 1\r\n}"
             },
             "url": {
               "raw": "http://localhost:8082/cuentas/1",
@@ -277,3 +277,6 @@
     }
   ]
 }
+
+
+

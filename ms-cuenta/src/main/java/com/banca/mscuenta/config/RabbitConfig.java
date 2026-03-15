@@ -13,10 +13,17 @@ import java.util.Map;
 public class RabbitConfig {
 
     public static final String QUEUE = "cliente.queue";
+    public static final String CUENTA_EXCHANGE = "cuenta.exchange";
+    public static final String CUENTA_ROUTING = "cuenta.routing";
 
     @Bean
     public Queue queue() {
         return new Queue(QUEUE);
+    }
+
+    @Bean
+    public TopicExchange cuentaExchange() {
+        return new TopicExchange(CUENTA_EXCHANGE);
     }
 
     @Bean
@@ -27,6 +34,8 @@ public class RabbitConfig {
         Map<String, Class<?>> idClassMapping = new HashMap<>();
         idClassMapping.put("com.banca.mscliente.event.ClienteCreadoEvent",
                 com.banca.mscuenta.event.ClienteCreadoEvent.class);
+        idClassMapping.put("com.banca.mscliente.event.ClienteEliminadoEvent",
+                com.banca.mscuenta.event.ClienteEliminadoEvent.class);
         classMapper.setIdClassMapping(idClassMapping);
         converter.setClassMapper(classMapper);
         return converter;

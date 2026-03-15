@@ -2,6 +2,7 @@ package com.banca.mscuenta.controller;
 
 import com.banca.mscuenta.dto.CuentaDTO;
 import com.banca.mscuenta.service.CuentaService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,7 @@ public class CuentaController {
     private final CuentaService service;
 
     @PostMapping
-    public CuentaDTO crear(@RequestBody CuentaDTO dto){
+    public CuentaDTO crear(@Valid @RequestBody CuentaDTO dto){
         return service.crear(dto);
     }
 
@@ -30,7 +31,7 @@ public class CuentaController {
     }
 
     @PutMapping("/{id}")
-    public CuentaDTO actualizar(@PathVariable Long id, @RequestBody CuentaDTO dto){
+    public CuentaDTO actualizar(@PathVariable Long id, @Valid @RequestBody CuentaDTO dto){
         return service.actualizar(id, dto);
     }
 
